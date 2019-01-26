@@ -42,7 +42,7 @@ public class LaserHit : MonoBehaviour
 
         RaycastHit hit, hit2;
 
-        if (Physics.Raycast(transform.position, (GameObject.Find("DividerCube 1").transform.position - transform.position).normalized, out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + .25f, transform.position.z), (transform.forward + transform.right).normalized, out hit, 100, layerMask))
         {
 
             if (hit.transform.name == "Sphere")
@@ -73,7 +73,7 @@ public class LaserHit : MonoBehaviour
             }
         }
 
-        if (Physics.Raycast(transform.position, (GameObject.Find("DividerCube 2").transform.position - transform.position).normalized, out hit2, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + .25f, transform.position.z), (-transform.forward + transform.right).normalized, out hit2, 100, layerMask))
         {
             // Debug.DrawLine(transform.position, (GameObject.Find(transform.name.ToString() + " 1").transform.position - transform.position).normalized * hit.distance, Color.yellow);
             //  Debug.Log(hit.transform.name);
