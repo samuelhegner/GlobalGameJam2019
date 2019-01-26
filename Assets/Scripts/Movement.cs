@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     NavMeshAgent agent;
     NavMeshObstacle obstacle;
 
+    public GameObject part;
+    
+
 
     Camera cam;
 
@@ -18,7 +21,7 @@ public class Movement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
         cam = Camera.main;
-
+        part = GameObject.Find("Particle Spawner");
         if (activePlayer)
         {
             agent.enabled = true;
@@ -43,6 +46,7 @@ public class Movement : MonoBehaviour
         {
             agent.enabled = true;
             obstacle.enabled = false;
+            //ParticleMovement.startPos = agent.transform.position;
             //click to move
             if (Input.GetMouseButtonDown(1))
             {
@@ -74,9 +78,19 @@ public class Movement : MonoBehaviour
 
                     if (hit.transform.tag == "Player")
                     {
+                        
                         GameObject potentialPlayer = hit.transform.gameObject;
+                        
                         if (potentialPlayer.GetComponent<Movement>().activePlayer == false)
                         {
+                            
+                            part.SetActive(false);
+                            part.transform.position = transform.position;
+                            
+                            ParticleMovement.enableParticleSystem = true;
+                            part.SetActive(true);
+                            
+                            ParticleMovement.targetPos = potentialPlayer.transform.position;
                             potentialPlayer.GetComponent<Movement>().activePlayer = true;
                             agent.SetDestination(transform.position);
                             activePlayer = false;

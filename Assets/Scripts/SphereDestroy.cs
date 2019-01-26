@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SphereDestroy : MonoBehaviour
 {
@@ -21,5 +22,6 @@ public class SphereDestroy : MonoBehaviour
     public void resetPosition ()
     {
         transform.position = originalPos;
+        GetComponent<NavMeshAgent>().SetDestination(originalPos);
     }
 }
