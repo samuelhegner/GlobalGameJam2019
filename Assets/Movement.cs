@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         agent.updateRotation = false;
+        agent.acceleration = 100f;
     }
 
     void Update()
