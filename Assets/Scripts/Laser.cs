@@ -35,7 +35,7 @@ public class Laser : MonoBehaviour
             // Debug.Log(hit.transform.name);
             LR.SetPosition(1, hit.point);
             // Debug.Log(hit.transform.tag);
-            if (hit.transform.tag == "yes")
+            if (hit.transform.name == "Pyramid")
             {
                 hit.transform.GetComponent<LaserHit>().HitByLaser();
                 if (!checkHit1)
@@ -54,7 +54,7 @@ public class Laser : MonoBehaviour
                     StartCoroutine(stopSplitter());
             }
 
-            if (hit.transform.tag == "Sphere")
+            if (hit.transform.name == "Sphere")
             {
                 Destroy(hit.transform.gameObject);
                 //Instantiate(

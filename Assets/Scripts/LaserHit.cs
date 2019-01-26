@@ -44,7 +44,7 @@ public class LaserHit : MonoBehaviour
             //Debug.Log(hit.transform.name);
             LR.SetPosition(1, hit.point);
             // Debug.Log("splitHit");
-            if (hit.transform.tag == "yes")
+            if (hit.transform.name == "Pyramid")
             {
                 hit.transform.GetComponent<LaserHit>().HitByLaser();
                 if (!checkHit1)
@@ -69,10 +69,10 @@ public class LaserHit : MonoBehaviour
            // Debug.DrawLine(transform.position, (GameObject.Find(transform.name.ToString() + " 1").transform.position - transform.position).normalized * hit.distance, Color.yellow);
           //  Debug.Log(hit.transform.name);
             LR2.SetPosition(1, hit2.point);
-            if (hit2.transform.tag == "yes")
+            if (hit2.transform.name == "Pyramid")
             {
                 hit2.transform.GetComponent<LaserHit>().HitByLaser();
-                if (hit2.transform.tag == "yes")
+               // if (hit2.transform.tag == "yes")
                     if (!checkHit2)
                     {
                         currentObject2 = hit2.transform.gameObject;
