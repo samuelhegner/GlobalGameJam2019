@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class Movement : MonoBehaviour
 {
     NavMeshAgent agent;
+    NavMeshObstacle obstacle;
+
 
     Camera cam;
 
@@ -14,7 +16,18 @@ public class Movement : MonoBehaviour
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        obstacle = GetComponent<NavMeshObstacle>();
         cam = Camera.main;
+
+        if (activePlayer)
+        {
+            agent.enabled = true;
+            obstacle.enabled = false;
+        }
+        else {
+            agent.enabled = false;
+            obstacle.enabled = true;
+        }
     }
 
     void Start()
@@ -28,6 +41,8 @@ public class Movement : MonoBehaviour
 
         if (activePlayer)
         {
+            agent.enabled = true;
+            obstacle.enabled = false;
             //click to move
             if (Input.GetMouseButtonDown(1))
             {
@@ -65,12 +80,16 @@ public class Movement : MonoBehaviour
                             potentialPlayer.GetComponent<Movement>().activePlayer = true;
                             agent.SetDestination(transform.position);
                             activePlayer = false;
-                            
                         }
                     }
                 }
 
             }
+        }
+        else
+        {
+            agent.enabled = false;
+            obstacle.enabled = true;
         }
 
 
