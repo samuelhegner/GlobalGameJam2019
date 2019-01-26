@@ -9,7 +9,7 @@ public class Laser : MonoBehaviour
     //public LineRenderer LR2, LR3;
     Transform holder;
     public List<GameObject> objects = new List<GameObject>();
-    public GameObject currentObject;
+    GameObject currentObject;
 
 
     // Start is called before the first frame update
@@ -36,11 +36,6 @@ public class Laser : MonoBehaviour
            // Debug.Log(hit.transform.tag);
             if (hit.transform.tag == "yes")
             {
-               /* LR2.SetPosition(0, hit.transform.position);
-                LR3.SetPosition(0, hit.transform.position);
-                LR2.SetPosition(1, GameObject.Find(hit.transform.name.ToString() + " 1").transform.position);
-                LR3.SetPosition(1, GameObject.Find(hit.transform.name.ToString() + " 2").transform.position);
-                RaycastHit hit2;*/
                 hit.transform.GetComponent<LaserHit>().HitByLaser();
                 currentObject = hit.transform.gameObject;
             }
