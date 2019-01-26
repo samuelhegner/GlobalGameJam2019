@@ -25,12 +25,12 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        //click to move
-        if (Input.GetMouseButtonDown(1)) {
 
-            
-            if (activePlayer == true) {
-
+        if (activePlayer)
+        {
+            //click to move
+            if (Input.GetMouseButtonDown(1))
+            {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -43,32 +43,36 @@ public class Movement : MonoBehaviour
                         //Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.red);
                     }
                 }
+
+
+
             }
-            
 
-        }
-
-        //click to switch object
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit, 1000f))
+            //click to switch object
+            if (Input.GetMouseButtonDown(0))
             {
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                if (hit.transform.tag == "Player")
+                if (Physics.Raycast(ray, out hit, 1000f))
                 {
-                    GameObject potentialPlayer = hit.transform.gameObject;
-                    if (potentialPlayer.GetComponent<Movement>().activePlayer == false) {
-                        potentialPlayer.GetComponent<Movement>().activePlayer = true;
-                        activePlayer = false;
-                        agent.SetDestination(transform.position);
+
+                    if (hit.transform.tag == "Player")
+                    {
+                        GameObject potentialPlayer = hit.transform.gameObject;
+                        if (potentialPlayer.GetComponent<Movement>().activePlayer == false)
+                        {
+                            potentialPlayer.GetComponent<Movement>().activePlayer = true;
+                            agent.SetDestination(transform.position);
+                            activePlayer = false;
+                            
+                        }
                     }
                 }
-            }
 
+            }
         }
+
 
     }
 }
