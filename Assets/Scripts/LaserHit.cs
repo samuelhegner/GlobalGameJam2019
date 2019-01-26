@@ -10,6 +10,7 @@ public class LaserHit : MonoBehaviour
     public LineRenderer LR, LR2;
     public Transform holder;
     public GameObject currentObject, currentObject2;
+    bool checkHit1, checkHit2;
 
     void Start()
     {
@@ -46,7 +47,15 @@ public class LaserHit : MonoBehaviour
             if (hit.transform.tag == "yes")
             {
                 hit.transform.GetComponent<LaserHit>().HitByLaser();
-                currentObject = hit.transform.gameObject;
+                if (!checkHit1)
+                {
+                    currentObject = hit.transform.gameObject;
+                    checkHit1 = true;
+                }
+                if (currentObject != hit.transform.gameObject)
+                {
+                    StartCoroutine(stopSplitter());
+                }
             }
             else
             {
@@ -64,11 +73,19 @@ public class LaserHit : MonoBehaviour
             {
                 hit2.transform.GetComponent<LaserHit>().HitByLaser();
                 if (hit2.transform.tag == "yes")
-                    currentObject2 = hit2.transform.gameObject;
+                    if (!checkHit2)
+                    {
+                        currentObject2 = hit2.transform.gameObject;
+                        checkHit2 = true;
+                    }
+                if (currentObject2 != hit2.transform.gameObject) {
+                    StartCoroutine(stopSplitter2());
+                }
             } 
             else
             {
-                if (currentObject2 != null)
+               
+                if (currentObject2 != null) 
                     StartCoroutine(stopSplitter2());
             }
         }
@@ -93,6 +110,8 @@ public class LaserHit : MonoBehaviour
         currentObject.GetComponent<LaserHit>().stopLaser();
         yield return new WaitForSeconds(Time.deltaTime);
         currentObject = null;
+        yield return new WaitForSeconds(Time.deltaTime);
+        checkHit1 = false;
     }
 
     IEnumerator stopSplitter2 ()
@@ -100,5 +119,7 @@ public class LaserHit : MonoBehaviour
         currentObject2.GetComponent<LaserHit>().stopLaser();
         yield return new WaitForSeconds(Time.deltaTime);
         currentObject2 = null;
+        yield return new WaitForSeconds(Time.deltaTime);
+        checkHit2 = false;
     }
 }
