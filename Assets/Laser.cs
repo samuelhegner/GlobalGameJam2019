@@ -7,12 +7,14 @@ public class Laser : MonoBehaviour
     public LayerMask layerMask;
     LineRenderer LR;
     public LineRenderer LR2, LR3;
+    Transform holder;
 
 
     // Start is called before the first frame update
     void Start()
     {
         LR = GetComponent<LineRenderer>();
+        holder = GameObject.Find("Holder").transform;
     }
 
     // Update is called once per frame
@@ -32,13 +34,19 @@ public class Laser : MonoBehaviour
            // Debug.Log(hit.transform.tag);
             if (hit.transform.tag == "yes")
             {
-                //LR2.SetPosition(0, hit.transform.position);
-                //LR3.SetPosition(0, hit.transform.position);
-                // LR2.SetPosition(1, hit.transform.position);
-                // LR3.SetPosition(1, hit.transform.position);
-                hit.transform.GetComponent<LaserHit>().HitByLaser();
+                LR2.SetPosition(0, hit.transform.position);
+                LR3.SetPosition(0, hit.transform.position);
+                 LR2.SetPosition(1, GameObject.Find(hit.transform.name.ToString() + " 1").transform.position);
+                 LR3.SetPosition(1, GameObject.Find(hit.transform.name.ToString() + " 2").transform.position);
+               // hit.transform.GetComponent<LaserHit>().HitByLaser();
             }
             else
+            {
+                LR2.SetPosition(0, holder.position);
+                LR3.SetPosition(0, holder.position);
+                LR2.SetPosition(1, holder.position);
+                LR3.SetPosition(1, holder.position);
+            }
             {
 
             }
