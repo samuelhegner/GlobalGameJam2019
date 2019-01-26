@@ -11,6 +11,7 @@ public class LaserHit : MonoBehaviour
     public Transform holder;
     public GameObject currentObject, currentObject2;
     bool checkHit1, checkHit2;
+    public GameObject sphere; 
 
     void Start()
     {
@@ -35,12 +36,21 @@ public class LaserHit : MonoBehaviour
         LR2.SetPosition(0, transform.position);
 
         Debug.Log(GameObject.Find("DividerCube 2").transform.name);
-       // Debug.DrawLine(transform.position, (GameObject.Find(transform.name.ToString() + " 1").transform.position - transform.position).normalized * 100, Color.yellow);
+        // Debug.DrawLine(transform.position, (GameObject.Find(transform.name.ToString() + " 1").transform.position - transform.position).normalized * 100, Color.yellow);
+
+        
 
         RaycastHit hit, hit2;
+
         if (Physics.Raycast(transform.position, (GameObject.Find("DividerCube 1").transform.position - transform.position).normalized, out hit, Mathf.Infinity, layerMask))
         {
-           
+
+            if (hit.transform.name == "Sphere")
+            {
+                Destroy(hit.transform.gameObject);
+                Instantiate(sphere, new Vector3(transform.position.x, transform.position.y + 4, transform.position.z), Quaternion.identity);
+            }
+
             //Debug.Log(hit.transform.name);
             LR.SetPosition(1, hit.point);
             // Debug.Log("splitHit");
@@ -66,8 +76,15 @@ public class LaserHit : MonoBehaviour
 
         if (Physics.Raycast(transform.position, (GameObject.Find("DividerCube 2").transform.position - transform.position).normalized, out hit2, Mathf.Infinity, layerMask))
         {
-           // Debug.DrawLine(transform.position, (GameObject.Find(transform.name.ToString() + " 1").transform.position - transform.position).normalized * hit.distance, Color.yellow);
-          //  Debug.Log(hit.transform.name);
+            // Debug.DrawLine(transform.position, (GameObject.Find(transform.name.ToString() + " 1").transform.position - transform.position).normalized * hit.distance, Color.yellow);
+            //  Debug.Log(hit.transform.name);
+
+            if (hit2.transform.name == "Sphere")
+            {
+                Destroy(hit2.transform.gameObject);
+                Instantiate(sphere, new Vector3(transform.position.x, transform.position.y + 4, transform.position.z), Quaternion.identity);
+            }
+
             LR2.SetPosition(1, hit2.point);
             if (hit2.transform.name == "Pyramid")
             {

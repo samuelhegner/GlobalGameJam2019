@@ -438,6 +438,7 @@ MonoBehaviour:
   holder: {fileID: 0}
   currentObject: {fileID: 0}
   currentObject2: {fileID: 0}
+  sphere: {fileID: 4645380437936270300, guid: 72a093113f4e7b84db42ad857148167e, type: 3}
 --- !u!1 &4100080576534066256
 GameObject:
   m_ObjectHideFlags: 0

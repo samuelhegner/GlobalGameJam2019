@@ -10,6 +10,7 @@ public class Laser : MonoBehaviour
     Transform holder;
     public List<GameObject> objects = new List<GameObject>();
     GameObject currentObject;
+    public GameObject sphere;
     bool checkHit1;
 
 
@@ -57,7 +58,8 @@ public class Laser : MonoBehaviour
             if (hit.transform.name == "Sphere")
             {
                 Destroy(hit.transform.gameObject);
-                //Instantiate(
+                GameObject clone = Instantiate(sphere, new Vector3(transform.position.x, transform.position.y + 4, transform.position.z), Quaternion.identity);
+                clone.name = "Sphere";
             }
         }
 
