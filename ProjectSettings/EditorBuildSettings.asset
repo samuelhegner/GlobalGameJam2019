@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Tutorials/Start Sphere tutorial.unity
+    guid: 78f70f17458019d4e91d17dda006c78f
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/Cube Tutorial.unity
+    guid: c3d01b96baf612f4db740cec8ef203ef
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/Pyramid tutorial.unity
+    guid: 98b5cd034e6b1a04b92484d4ffba08a7
   m_configObjects: {}
