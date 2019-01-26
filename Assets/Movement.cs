@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
 
     Camera cam;
 
-    bool activePlayer;
+    public bool activePlayer;
 
     void Awake()
     {
@@ -25,24 +25,49 @@ public class Movement : MonoBehaviour
     void Update()
     {
         //click to move
-        if (Input.GetMouseButton(1)) {
+        if (Input.GetMouseButtonDown(1)) {
+
+            
+            if (activePlayer == true) {
+
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, 1000f))
+                {
+                    if (hit.transform.tag == "Ground")
+                    {
+                        print("test" + hit.point);
+                        agent.SetDestination(hit.point);
+                        //Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.red);
+                    }
+                }
+            }
+            
+
+        }
+
+        //click to switch object
+        if (Input.GetMouseButtonDown(0))
+        {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit, 1000f))
             {
-                
-                if (hit.transform.tag == "Ground")
+
+                if (hit.transform.tag == "Player")
                 {
-                    print("test" + hit.point);
-                    agent.SetDestination(hit.point);
-                    Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.red);
+                    GameObject potentialPlayer = hit.transform.gameObject;
+                    if (potentialPlayer.GetComponent<Movement>().activePlayer == false) {
+                        potentialPlayer.GetComponent<Movement>().activePlayer = true;
+                        activePlayer = false;
+                        agent.SetDestination(transform.position);
+                    }
                 }
             }
 
         }
 
     }
-
-    
 }
