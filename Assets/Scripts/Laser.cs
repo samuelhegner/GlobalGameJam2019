@@ -53,6 +53,12 @@ public class Laser : MonoBehaviour
                 if (currentObject != null)
                     StartCoroutine(stopSplitter());
             }
+
+            if (hit.transform.tag == "Sphere")
+            {
+                Destroy(hit.transform.gameObject);
+                //Instantiate(
+            }
         }
 
     }
