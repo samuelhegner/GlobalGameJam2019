@@ -36,8 +36,8 @@ public class Laser : MonoBehaviour
             {
                 LR2.SetPosition(0, hit.transform.position);
                 LR3.SetPosition(0, hit.transform.position);
-                 LR2.SetPosition(1, GameObject.Find(hit.transform.name.ToString() + " 1").transform.position);
-                 LR3.SetPosition(1, GameObject.Find(hit.transform.name.ToString() + " 2").transform.position);
+                LR2.SetPosition(1, GameObject.Find(hit.transform.name.ToString() + " 1").transform.position);
+                LR3.SetPosition(1, GameObject.Find(hit.transform.name.ToString() + " 2").transform.position);
                // hit.transform.GetComponent<LaserHit>().HitByLaser();
             }
             else
