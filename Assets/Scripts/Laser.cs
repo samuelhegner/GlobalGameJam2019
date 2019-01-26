@@ -10,6 +10,7 @@ public class Laser : MonoBehaviour
     Transform holder;
     public List<GameObject> objects = new List<GameObject>();
     GameObject currentObject;
+    bool checkHit1;
 
 
     // Start is called before the first frame update
@@ -27,30 +28,33 @@ public class Laser : MonoBehaviour
 
 
         RaycastHit hit;
-        
+
         if (Physics.Raycast(transform.position, Vector3.right, out hit, Mathf.Infinity, layerMask))
         {
-           // Debug.DrawLine(transform.position, Vector3.right * hit.distance, Color.yellow);
-           // Debug.Log(hit.transform.name);
+            // Debug.DrawLine(transform.position, Vector3.right * hit.distance, Color.yellow);
+            // Debug.Log(hit.transform.name);
             LR.SetPosition(1, hit.point);
-           // Debug.Log(hit.transform.tag);
+            // Debug.Log(hit.transform.tag);
             if (hit.transform.tag == "yes")
             {
                 hit.transform.GetComponent<LaserHit>().HitByLaser();
-                currentObject = hit.transform.gameObject;
+                if (!checkHit1)
+                {
+                    currentObject = hit.transform.gameObject;
+                    checkHit1 = true;
+                }
+                if (currentObject != hit.transform.gameObject)
+                {
+                    StartCoroutine(stopSplitter());
+                }
             }
             else
             {
                 if (currentObject != null)
                     StartCoroutine(stopSplitter());
             }
-           
         }
-        else
-        {
-           // Debug.DrawLine(transform.position, transform.TransformDirection(Vector3.right) * hit.distance, Color.yellow);
-            //Debug.Log("Did not Hit");
-        }
+
     }
 
     IEnumerator stopSplitter()
@@ -58,5 +62,7 @@ public class Laser : MonoBehaviour
         currentObject.GetComponent<LaserHit>().stopLaser();
         yield return new WaitForSeconds(Time.deltaTime);
         currentObject = null;
+        yield return new WaitForSeconds(Time.deltaTime);
+        checkHit1 = false;
     }
 }
