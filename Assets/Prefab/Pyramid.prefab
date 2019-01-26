@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2326263871726639067}
   - component: {fileID: 1627322042910670074}
   - component: {fileID: 2028806667}
+  - component: {fileID: 4457913717044605506}
   m_Layer: 0
   m_Name: Pyramid
   m_TagString: Player
@@ -398,3 +399,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePlayer: 1
+--- !u!208 &4457913717044605506
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326263871726639066}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1, y: 0.75000006, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.02, y: 0.72, z: -0.010000001}
+  m_TimeToStationary: 0.5
