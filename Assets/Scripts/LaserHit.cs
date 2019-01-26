@@ -47,9 +47,7 @@ public class LaserHit : MonoBehaviour
 
             if (hit.transform.name == "Sphere")
             {
-                Destroy(hit.transform.gameObject);
-                GameObject clone = Instantiate(sphere, new Vector3(transform.position.x, transform.position.y + 4, transform.position.z), Quaternion.identity);
-                clone.name = "Sphere";
+                hit.transform.GetComponent<SphereDestroy>().resetPosition();
             }
 
             //Debug.Log(hit.transform.name);
@@ -82,9 +80,7 @@ public class LaserHit : MonoBehaviour
 
             if (hit2.transform.name == "Sphere")
             {
-                Destroy(hit2.transform.gameObject);
-                GameObject clone = Instantiate(sphere, new Vector3(transform.position.x, transform.position.y + 4, transform.position.z), Quaternion.identity);
-                clone.name = "Sphere";
+                hit2.transform.GetComponent<SphereDestroy>().resetPosition();
             }
 
             LR2.SetPosition(1, hit2.point);
