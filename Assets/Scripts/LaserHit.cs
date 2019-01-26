@@ -34,7 +34,7 @@ public class LaserHit : MonoBehaviour
         LR.SetPosition(0, transform.position);
         LR2.SetPosition(0, transform.position);
 
-        Debug.Log("dividerHit");
+        Debug.Log(GameObject.Find("DividerCube 2").transform.name);
        // Debug.DrawLine(transform.position, (GameObject.Find(transform.name.ToString() + " 1").transform.position - transform.position).normalized * 100, Color.yellow);
 
         RaycastHit hit, hit2;
