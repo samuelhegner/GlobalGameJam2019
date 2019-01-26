@@ -11,7 +11,9 @@ public class LaserHit : MonoBehaviour
     public Transform holder;
     public GameObject currentObject, currentObject2;
     bool checkHit1, checkHit2;
-    public GameObject sphere; 
+    public bool targetHit1, targetHit2;
+    public GameObject sphere;
+    public LaserManager LM;
 
     void Start()
     {
@@ -26,7 +28,10 @@ public class LaserHit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (targetHit1 && targetHit2)
+        {
+            LM.targetsHit();
+        }
     }
 
 
@@ -35,7 +40,7 @@ public class LaserHit : MonoBehaviour
         LR.SetPosition(0, transform.position);
         LR2.SetPosition(0, transform.position);
 
-        Debug.Log(GameObject.Find("DividerCube 2").transform.name);
+       // Debug.Log(GameObject.Find("DividerCube 2").transform.name);
         // Debug.DrawLine(transform.position, (GameObject.Find(transform.name.ToString() + " 1").transform.position - transform.position).normalized * 100, Color.yellow);
 
         
@@ -48,6 +53,14 @@ public class LaserHit : MonoBehaviour
             if (hit.transform.name == "Sphere")
             {
                 hit.transform.GetComponent<SphereDestroy>().resetPosition();
+            }
+
+            if (hit.transform.name == "TargetCube")
+            {
+                targetHit1 = true;
+            } else
+            {
+                targetHit1 = false;
             }
 
             //Debug.Log(hit.transform.name);
@@ -81,6 +94,15 @@ public class LaserHit : MonoBehaviour
             if (hit2.transform.name == "Sphere")
             {
                 hit2.transform.GetComponent<SphereDestroy>().resetPosition();
+            }
+
+            if (hit2.transform.name == "TargetCube")
+            {
+                targetHit2 = true;
+            }
+            else
+            {
+                targetHit2 = false;
             }
 
             LR2.SetPosition(1, hit2.point);
