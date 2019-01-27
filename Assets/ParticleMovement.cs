@@ -28,8 +28,14 @@ public class ParticleMovement : MonoBehaviour
 
             if (transform.position == targetPos)
             {
-                gameObject.SetActive(false);
+                Invoke("DisableObject", 1f);
             }
         }
+    }
+
+
+    void DisableObject()
+    {
+        gameObject.SetActive(false);
     }
 }
