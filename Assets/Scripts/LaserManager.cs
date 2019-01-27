@@ -20,7 +20,10 @@ public class LaserManager : MonoBehaviour
     {
         if (targetHits == 2)
         {
-            targetsHit();
+            anim.SetBool("doorOpen", true);
+        } else
+        {
+            anim.SetBool("doorOpen", false);
         }
     }
 

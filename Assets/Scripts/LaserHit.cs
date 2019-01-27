@@ -66,6 +66,7 @@ public class LaserHit : MonoBehaviour
                 }
             else
             {
+                
                 if (targetHit1)
                 {
                     LM.targetHits -= 1;
@@ -158,6 +159,16 @@ public class LaserHit : MonoBehaviour
             StartCoroutine(stopSplitter());
         if (currentObject2 != null)
             StartCoroutine(stopSplitter2());
+        if (targetHit1)
+        {
+            LM.targetHits -= 1;
+            targetHit1 = false;
+        }
+        if (targetHit2)
+        {
+            LM.targetHits -= 1;
+            targetHit2 = false;
+        }
     }
 
 
