@@ -14,6 +14,8 @@ public class Laser : MonoBehaviour
     bool checkHit1, targetHit, laserActivate = true;
     public LaserManager LM;
 
+    public GameObject sparks;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,9 @@ public class Laser : MonoBehaviour
                 // Debug.DrawLine(transform.position, Vector3.right * hit.distance, Color.yellow);
                 // Debug.Log(hit.transform.name);
                 LR.SetPosition(1, hit.point);
+
+                sparks.transform.position = hit.point;
+                sparks.transform.rotation = Quaternion.LookRotation(-transform.forward); 
                 // Debug.Log(hit.transform.tag);
                 if (hit.transform.name == "Pyramid")
                 {
