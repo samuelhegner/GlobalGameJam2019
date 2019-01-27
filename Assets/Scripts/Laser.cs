@@ -69,6 +69,7 @@ public class Laser : MonoBehaviour
                     LM.targetHits += 1;
                     targetHit = true;
                 }
+                hit.transform.GetComponent<TargetBlock>().enterHit();
             }
             else
             {
