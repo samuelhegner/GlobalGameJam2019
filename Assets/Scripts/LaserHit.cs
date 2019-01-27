@@ -61,15 +61,18 @@ public class LaserHit : MonoBehaviour
                 hit.transform.GetComponent<SphereDestroy>().resetPosition();
             }
 
+            
+
             if (hit.transform.name == "TargetCube")
             {
-
+                Debug.Log(hit.transform.name);
                 if (!targetHit1)
                 {
                     LM.targetHits += 1;
                     targetHit1 = true;
                 }
-                }
+                hit.transform.GetComponent<TargetBlock>().enterHit();
+            }
             else
             {
                 
@@ -121,6 +124,7 @@ public class LaserHit : MonoBehaviour
                     LM.targetHits += 1;
                     targetHit2 = true;
                 }
+                hit2.transform.GetComponent<TargetBlock>().enterHit();
             }
             else
             {

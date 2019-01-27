@@ -5,12 +5,13 @@ using UnityEngine;
 public class TargetBlock : MonoBehaviour
 {
     LaserManager LM;
-    public bool beingHit;
+    AudioSource aud; 
     
     // Start is called before the first frame update
     void Start()
     {
         LM = GameObject.Find("Manager").GetComponent<LaserManager>();
+        aud = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,11 +22,7 @@ public class TargetBlock : MonoBehaviour
 
     public void enterHit ()
     {
-        beingHit = true;
-    }
-
-    public void exitHit()
-    {
-        beingHit = true;
+        if (!aud.isPlaying)
+            aud.Play();
     }
 }
