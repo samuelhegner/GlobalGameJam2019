@@ -14,6 +14,7 @@ public class LaserHit : MonoBehaviour
     public bool targetHit1, targetHit2;
     public GameObject sphere;
     public LaserManager LM;
+    AudioSource aud;
 
     void Start()
     {
@@ -23,6 +24,8 @@ public class LaserHit : MonoBehaviour
         LR2.SetPosition(1, holder.position);
 
         holder = GameObject.Find("Holder").transform;
+
+        aud = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,6 +42,9 @@ public class LaserHit : MonoBehaviour
     {
         LR.SetPosition(0, transform.position);
         LR2.SetPosition(0, transform.position);
+
+        if (!aud.isPlaying)
+            aud.Play();
 
        // Debug.Log(GameObject.Find("DividerCube 2").transform.name);
         // Debug.DrawLine(transform.position, (GameObject.Find(transform.name.ToString() + " 1").transform.position - transform.position).normalized * 100, Color.yellow);
@@ -169,6 +175,7 @@ public class LaserHit : MonoBehaviour
             LM.targetHits -= 1;
             targetHit2 = false;
         }
+        aud.Stop();
     }
 
 

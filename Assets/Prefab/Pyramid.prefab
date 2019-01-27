@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5840d01b30abb9e45ac364d09be0031a, type: 2}
+  - {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
   part: {fileID: 0}
   inactiveColour: {fileID: 0}
   activeColour: {fileID: 0}
-  activePlayer: 0
+  activePlayer: 1
 --- !u!208 &4457913717044605506
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -457,8 +457,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d76f3b961df1d914c849372c4a4bf81a, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
