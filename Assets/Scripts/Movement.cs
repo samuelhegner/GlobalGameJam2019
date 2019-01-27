@@ -12,8 +12,8 @@ public class Movement : MonoBehaviour
 
     private Renderer rend;
 
-    public Color inactiveColour;
-    public Color activeColour;
+    public Material inactiveColour;
+    public Material activeColour;
     
     
     
@@ -55,6 +55,7 @@ public class Movement : MonoBehaviour
         {
             agent.enabled = true;
             obstacle.enabled = false;
+            rend.material.color = activeColour.color;
             //ParticleMovement.startPos = agent.transform.position;
             //click to move
             if (Input.GetMouseButtonDown(0))
@@ -92,8 +93,8 @@ public class Movement : MonoBehaviour
                         
                         if (potentialPlayer.GetComponent<Movement>().activePlayer == false)
                         {
-                            
-                            rend.material.color = Color.Lerp(rend.material.color, activeColour, Time.deltaTime);
+
+                           
                             
                             
                             part.SetActive(false);
@@ -117,7 +118,7 @@ public class Movement : MonoBehaviour
         {
             agent.enabled = false;
             obstacle.enabled = true;
-            rend.material.color = Color.Lerp(rend.material.color, inactiveColour, Time.deltaTime);
+            rend.material.color = inactiveColour.color;
         }
 
 
