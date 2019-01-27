@@ -15,6 +15,10 @@ public class LaserHit : MonoBehaviour
     public GameObject sphere;
     public LaserManager LM;
     AudioSource aud;
+    
+    public GameObject sparks1;
+    public GameObject sparks2;
+
 
     void Start()
     {
@@ -55,7 +59,8 @@ public class LaserHit : MonoBehaviour
 
         if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + .25f, transform.position.z), (transform.forward + transform.right).normalized, out hit, 100, layerMask))
         {
-
+            sparks1.transform.position = hit.point;
+            sparks1.transform.rotation = Quaternion.LookRotation(-(transform.forward + transform.right).normalized); 
             if (hit.transform.name == "Sphere")
             {
                 hit.transform.GetComponent<SphereDestroy>().resetPosition();
@@ -110,7 +115,8 @@ public class LaserHit : MonoBehaviour
         {
             // Debug.DrawLine(transform.position, (GameObject.Find(transform.name.ToString() + " 1").transform.position - transform.position).normalized * hit.distance, Color.yellow);
             //  Debug.Log(hit.transform.name);
-
+            sparks2.transform.position = hit2.point;
+            sparks2.transform.rotation = Quaternion.LookRotation(-(-transform.forward + transform.right).normalized); 
             if (hit2.transform.name == "Sphere")
             {
                 hit2.transform.GetComponent<SphereDestroy>().resetPosition();
@@ -165,6 +171,8 @@ public class LaserHit : MonoBehaviour
         LR2.SetPosition(0, holder.position);
         LR.SetPosition(1, holder.position);
         LR2.SetPosition(1, holder.position);
+        sparks1.transform.position = holder.position;
+        sparks2.transform.position = holder.position;
         if (currentObject != null)
             StartCoroutine(stopSplitter());
         if (currentObject2 != null)

@@ -79,7 +79,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 2
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -449,6 +449,8 @@ MonoBehaviour:
   targetHit2: 0
   sphere: {fileID: 4645380437936270300, guid: 72a093113f4e7b84db42ad857148167e, type: 3}
   LM: {fileID: 0}
+  sparks1: {fileID: 1277181460454904, guid: 6045d1b325cc0c3488ea3f8181acf5ea, type: 3}
+  sparks2: {fileID: 1277181460454904, guid: 6045d1b325cc0c3488ea3f8181acf5ea, type: 3}
 --- !u!82 &7650067938844309042
 AudioSource:
   m_ObjectHideFlags: 0

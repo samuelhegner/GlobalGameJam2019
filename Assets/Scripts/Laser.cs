@@ -5,7 +5,7 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     public LayerMask layerMask;
-    LineRenderer LR;
+   public  LineRenderer LR;
     //public LineRenderer LR2, LR3;
     Transform holder;
     public List<GameObject> objects = new List<GameObject>();
