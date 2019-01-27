@@ -22,7 +22,7 @@ public class TargetBlock : MonoBehaviour
 
     public void enterHit ()
     {
-        if (!aud.isPlaying)
-            aud.Play();
+        //if (!aud.isPlaying)
+        //    aud.Play();
     }
 }
