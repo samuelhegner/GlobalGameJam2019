@@ -57,10 +57,20 @@ public class LaserHit : MonoBehaviour
 
             if (hit.transform.name == "TargetCube")
             {
-                targetHit1 = true;
-            } else
+
+                if (!targetHit1)
+                {
+                    LM.targetHits += 1;
+                    targetHit1 = true;
+                }
+                }
+            else
             {
-                targetHit1 = false;
+                if (targetHit1)
+                {
+                    LM.targetHits -= 1;
+                    targetHit1 = false;
+                }
             }
 
             //Debug.Log(hit.transform.name);
@@ -99,10 +109,19 @@ public class LaserHit : MonoBehaviour
             if (hit2.transform.name == "TargetCube")
             {
                 targetHit2 = true;
+                if (!targetHit2)
+                {
+                    LM.targetHits += 1;
+                    targetHit2 = true;
+                }
             }
             else
             {
-                targetHit2 = false;
+                if (targetHit2)
+                {
+                    LM.targetHits -= 1;
+                    targetHit2 = false;
+                }
             }
 
             LR2.SetPosition(1, hit2.point);

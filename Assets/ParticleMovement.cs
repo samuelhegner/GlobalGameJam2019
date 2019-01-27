@@ -36,7 +36,7 @@ public class ParticleMovement : MonoBehaviour
             }
         }
 
-        print(setSpeed);
+        //print(setSpeed);
 
 
     }
