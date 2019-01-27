@@ -11,7 +11,8 @@ public class Laser : MonoBehaviour
     public List<GameObject> objects = new List<GameObject>();
     GameObject currentObject;
     public GameObject sphere;
-    bool checkHit1;
+    bool checkHit1, targetHit;
+    public LaserManager LM;
 
 
     // Start is called before the first frame update
@@ -58,6 +59,25 @@ public class Laser : MonoBehaviour
             if (hit.transform.name == "Sphere")
             {
                 hit.transform.GetComponent<SphereDestroy>().resetPosition();
+            }
+
+            if (hit.transform.name == "TargetCube")
+            {
+
+                if (!targetHit)
+                {
+                    LM.targetHits += 1;
+                    targetHit = true;
+                }
+            }
+            else
+            {
+
+                if (targetHit)
+                {
+                    LM.targetHits -= 1;
+                    targetHit = false;
+                }
             }
         }
 
