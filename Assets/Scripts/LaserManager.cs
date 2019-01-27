@@ -44,7 +44,7 @@ public class LaserManager : MonoBehaviour
             doorOpened = false;
         }
 
-        if (targetHits == targetsNeeded && usingLaser)
+        if (targetHits >= targetsNeeded && usingLaser)
         {
             laser1.startLaser();
         }
