@@ -27,7 +27,6 @@
           </e>
         </e>
         <e p="ParticleMovement.cs" t="Include" />
-        <e p="Patrol.cs" t="Include" />
         <e p="ProCore" t="Include">
           <e p="ProBuilder" t="Include">
             <e p="About" t="Include">

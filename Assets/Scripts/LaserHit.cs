@@ -108,7 +108,7 @@ public class LaserHit : MonoBehaviour
 
             if (hit2.transform.name == "TargetCube")
             {
-                targetHit2 = true;
+                
                 if (!targetHit2)
                 {
                     LM.targetHits += 1;
