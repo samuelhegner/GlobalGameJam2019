@@ -113,7 +113,10 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: dcbc1dd77c7b98e4db49b8825a7957f9, type: 2}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
 --- !u!1001 &59480174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -563,7 +566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 8
+=======
+      value: 9
+>>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
 =======
       value: 9
 >>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
@@ -676,7 +683,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 3
+=======
+  m_RootOrder: 7
+>>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
 =======
   m_RootOrder: 7
 >>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
@@ -749,7 +760,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 2
+=======
+  m_RootOrder: 5
+>>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
 =======
   m_RootOrder: 5
 >>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
@@ -957,7 +972,11 @@ Transform:
   - {fileID: 1428128850}
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 6
+=======
+  m_RootOrder: 10
+>>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
 =======
   m_RootOrder: 10
 >>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
@@ -1013,7 +1032,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 5
+=======
+      value: 6
+>>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
 =======
       value: 6
 >>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919

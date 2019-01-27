@@ -241,7 +241,11 @@
       <workItem from="1548517578528" duration="1619000" />
       <workItem from="1548520806921" duration="6472000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1548537378363" duration="4768000" />
+=======
+      <workItem from="1548537378363" duration="6044000" />
+>>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
 =======
       <workItem from="1548537378363" duration="6044000" />
 >>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
@@ -250,7 +254,11 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="10810000" />
+=======
+    <option name="totallyTimeSpent" value="12086000" />
+>>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
 =======
     <option name="totallyTimeSpent" value="12086000" />
 >>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
@@ -426,7 +434,10 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Movement.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -474,6 +485,9 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+>>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
+=======
 >>>>>>> 7311fce4f67e063d22a7acb4ce1fc153fd2b5919
   </component>
 </project>
