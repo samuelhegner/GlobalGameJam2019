@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorials/Start Sphere tutorial.unity
     guid: 78f70f17458019d4e91d17dda006c78f
   - enabled: 1
-    path: Assets/Scenes/Tutorials/Cube Tutorial.unity
-    guid: c3d01b96baf612f4db740cec8ef203ef
+    path: Assets/Scenes/Tutorials/Cube Tutorial2.0.unity
+    guid: 104a2f95fe9bc4145884a14ba61cc885
   - enabled: 1
     path: Assets/Scenes/Tutorials/Pyramid tutorial.unity
     guid: 98b5cd034e6b1a04b92484d4ffba08a7
