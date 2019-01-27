@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -394,7 +394,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13544
+  m_Name: pb_Mesh20918
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2659,7 +2659,7 @@ PrefabInstance:
     - target: {fileID: 5691171521902107764, guid: b035d68ba7cb209419843e0bfe58b0e4,
         type: 3}
       propertyPath: SceneToLoad
-      value: Cube Tutorial
+      value: Cube Tutorial2.0
       objectReference: {fileID: 0}
     - target: {fileID: 5691171521902107755, guid: b035d68ba7cb209419843e0bfe58b0e4,
         type: 3}

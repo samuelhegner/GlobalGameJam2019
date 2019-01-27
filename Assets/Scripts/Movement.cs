@@ -94,9 +94,6 @@ public class Movement : MonoBehaviour
                         if (potentialPlayer.GetComponent<Movement>().activePlayer == false)
                         {
 
-                           
-                            
-                            
                             part.SetActive(false);
                             part.transform.position = transform.position;
                             
