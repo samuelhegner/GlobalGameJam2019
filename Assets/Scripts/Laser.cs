@@ -30,7 +30,7 @@ public class Laser : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, Vector3.right, out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, layerMask))
         {
             // Debug.DrawLine(transform.position, Vector3.right * hit.distance, Color.yellow);
             // Debug.Log(hit.transform.name);
