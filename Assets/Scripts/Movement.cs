@@ -12,8 +12,8 @@ public class Movement : MonoBehaviour
 
     private Renderer rend;
 
-    public Material inactiveColour;
-    public Material activeColour;
+    public Color inactiveColour;
+    public Color activeColour;
     
     
     
@@ -93,8 +93,8 @@ public class Movement : MonoBehaviour
                         if (potentialPlayer.GetComponent<Movement>().activePlayer == false)
                         {
                             
-                            rend.material.shader = Shader.Find("color");
-                            rend.material.SetColor("color", activeColour);
+                            rend.material.color = Color.Lerp(rend.material.color, activeColour, Time.deltaTime);
+                            
                             
                             part.SetActive(false);
                             part.transform.position = transform.position;
@@ -117,6 +117,7 @@ public class Movement : MonoBehaviour
         {
             agent.enabled = false;
             obstacle.enabled = true;
+            rend.material.color = Color.Lerp(rend.material.color, inactiveColour, Time.deltaTime);
         }
 
 
