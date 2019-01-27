@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44636542, g: 0.49104887, b: 0.5471404, a: 1}
+  m_IndirectSpecularColor: {r: 0.44636524, g: 0.49104846, b: 0.5471399, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1221,6 +1221,7 @@ GameObject:
   - component: {fileID: 1418199381}
   - component: {fileID: 1418199380}
   - component: {fileID: 1418199379}
+  - component: {fileID: 1418199382}
   m_Layer: 4
   m_Name: Level Change
   m_TagString: Untagged
@@ -1240,7 +1241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a31d1e15cbc9b4c993f8a27bc9e272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: All3_Scene
+  SceneToLoad: Moving level
 --- !u!65 &1418199380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1268,6 +1269,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1418199382
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418199378}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1439162801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,11 +2839,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8375368999018190434, guid: 9d06413218ccced44bacdbc39560a072,
-        type: 3}
-      propertyPath: sparks
-      value: 
-      objectReference: {fileID: 755866336}
     - target: {fileID: 8375368999018190430, guid: 9d06413218ccced44bacdbc39560a072,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2922,6 +2934,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2025688181}
+    - target: {fileID: 8375368999018190434, guid: 9d06413218ccced44bacdbc39560a072,
+        type: 3}
+      propertyPath: sparks
+      value: 
+      objectReference: {fileID: 755866336}
     - target: {fileID: 4519995840371171774, guid: 9d06413218ccced44bacdbc39560a072,
         type: 3}
       propertyPath: m_RootOrder
