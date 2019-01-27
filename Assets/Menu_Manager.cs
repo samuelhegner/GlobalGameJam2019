@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu_Manager : MonoBehaviour
 {
 
     enum Menu { Default, HowTo };
+
+    public string sceneName;
 
     public GameObject[] menus = new GameObject[2];
 
@@ -32,7 +35,7 @@ public class Menu_Manager : MonoBehaviour
         }
     }
 
-    void SwitchMode()
+    public void SwitchMode()
     {
         if (currentState == Menu.Default)
         {
@@ -40,6 +43,16 @@ public class Menu_Manager : MonoBehaviour
         }
         else if (currentState == Menu.HowTo) {
             currentState = Menu.Default;
+        }
+    }
+
+    public void StartGame() {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void EndGame() {
+        if (!Application.isEditor) {
+            Application.Quit();
         }
     }
 }

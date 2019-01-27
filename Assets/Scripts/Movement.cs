@@ -14,8 +14,8 @@ public class Movement : MonoBehaviour
 
     public Material inactiveColour;
     public Material activeColour;
-    
-    
+
+    public LayerMask mask;
     
 
 
@@ -63,7 +63,7 @@ public class Movement : MonoBehaviour
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                if (Physics.Raycast(ray, out hit, 1000f))
+                if (Physics.Raycast(ray, out hit, 1000f, mask))
                 {
                     if (hit.transform.tag == "Ground")
                     {
