@@ -11,7 +11,7 @@ public class Laser : MonoBehaviour
     public List<GameObject> objects = new List<GameObject>();
     GameObject currentObject;
     public GameObject sphere;
-    bool checkHit1, targetHit;
+    bool checkHit1, targetHit, laserActivate = true;
     public LaserManager LM;
 
 
@@ -25,63 +25,64 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        LR.SetPosition(0, transform.position);
-
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, layerMask))
+        if (laserActivate)
         {
-            // Debug.DrawLine(transform.position, Vector3.right * hit.distance, Color.yellow);
-            // Debug.Log(hit.transform.name);
-            LR.SetPosition(1, hit.point);
-            // Debug.Log(hit.transform.tag);
-            if (hit.transform.name == "Pyramid")
+            LR.SetPosition(0, transform.position);
+
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, layerMask))
             {
-                hit.transform.GetComponent<LaserHit>().HitByLaser();
-                if (!checkHit1)
+                // Debug.DrawLine(transform.position, Vector3.right * hit.distance, Color.yellow);
+                // Debug.Log(hit.transform.name);
+                LR.SetPosition(1, hit.point);
+                // Debug.Log(hit.transform.tag);
+                if (hit.transform.name == "Pyramid")
                 {
-                    currentObject = hit.transform.gameObject;
-                    checkHit1 = true;
+                    hit.transform.GetComponent<LaserHit>().HitByLaser();
+                    if (!checkHit1)
+                    {
+                        currentObject = hit.transform.gameObject;
+                        checkHit1 = true;
+                    }
+                    if (currentObject != hit.transform.gameObject)
+                    {
+                        StartCoroutine(stopSplitter());
+                    }
                 }
-                if (currentObject != hit.transform.gameObject)
+                else
                 {
-                    StartCoroutine(stopSplitter());
+                    if (currentObject != null)
+                        StartCoroutine(stopSplitter());
                 }
-            }
-            else
-            {
-                if (currentObject != null)
-                    StartCoroutine(stopSplitter());
-            }
 
-            if (hit.transform.name == "Sphere")
-            {
-                hit.transform.GetComponent<SphereDestroy>().resetPosition();
-            }
-
-            if (hit.transform.name == "TargetCube")
-            {
-
-                if (!targetHit)
+                if (hit.transform.name == "Sphere")
                 {
-                    LM.targetHits += 1;
-                    targetHit = true;
+                    hit.transform.GetComponent<SphereDestroy>().resetPosition();
                 }
-               // hit.transform.GetComponent<TargetBlock>().enterHit();
-            }
-            else
-            {
 
-                if (targetHit)
+                if (hit.transform.name == "TargetCube")
                 {
-                    LM.targetHits -= 1;
-                    targetHit = false;
+
+                    if (!targetHit)
+                    {
+                        LM.targetHits += 1;
+                        targetHit = true;
+                    }
+                    // hit.transform.GetComponent<TargetBlock>().enterHit();
+                }
+                else
+                {
+
+                    if (targetHit)
+                    {
+                        LM.targetHits -= 1;
+                        targetHit = false;
+                    }
                 }
             }
         }
-
     }
 
     IEnumerator stopSplitter()
@@ -92,5 +93,17 @@ public class Laser : MonoBehaviour
         //yield return new WaitForSeconds(Time.deltaTime);
         checkHit1 = false;
         yield return null;
+    }
+
+    public void stopLaser ()
+    {
+        LR.SetPosition(0, new Vector3(-15, -15, -15));
+        LR.SetPosition(1, new Vector3(-15, -15, -15));
+        laserActivate = false;
+    }
+
+    public void startLaser ()
+    {
+        laserActivate = true;
     }
 }

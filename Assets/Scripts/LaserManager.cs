@@ -18,6 +18,11 @@ public class LaserManager : MonoBehaviour
     void Start()
     {
         aud = GetComponent<AudioSource>();
+
+        if (usingLaser)
+        {
+            laser1.stopLaser();
+        }
     }
 
     // Update is called once per frame
@@ -41,12 +46,12 @@ public class LaserManager : MonoBehaviour
 
         if (targetHits == targetsNeeded && usingLaser)
         {
-            laser1.enabled = true;
+            laser1.startLaser();
         }
         else
         {   
             if (usingLaser)
-            laser1.enabled = false;
+                laser1.stopLaser();
         }   
     }
 
