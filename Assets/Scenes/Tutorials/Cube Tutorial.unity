@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -139,8 +139,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842451043}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.25, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 7.5}
+  m_LocalPosition: {x: -4.25, y: 1, z: 0.506}
+  m_LocalScale: {x: 1, y: 2, z: 8.5}
   m_Children: []
   m_Father: {fileID: 1454436834}
   m_RootOrder: 0
@@ -322,7 +322,7 @@ PrefabInstance:
     - target: {fileID: 8375368999018190430, guid: 9d06413218ccced44bacdbc39560a072,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8375368999018190430, guid: 9d06413218ccced44bacdbc39560a072,
         type: 3}
@@ -552,7 +552,7 @@ PrefabInstance:
     - target: {fileID: 6949954898297121910, guid: 72a093113f4e7b84db42ad857148167e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6949954898297121910, guid: 72a093113f4e7b84db42ad857148167e,
         type: 3}
@@ -569,6 +569,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6605596416742167086, guid: 72a093113f4e7b84db42ad857148167e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5840d01b30abb9e45ac364d09be0031a, type: 2}
     - target: {fileID: 1165021782383872980, guid: 72a093113f4e7b84db42ad857148167e,
         type: 3}
       propertyPath: activePlayer
@@ -699,7 +704,7 @@ Transform:
   - {fileID: 1912994605}
   - {fileID: 1428128850}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1520320186
 PrefabInstance:
@@ -772,6 +777,11 @@ PrefabInstance:
       propertyPath: activePlayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6091208910116550531, guid: 455bf5d8fa8999245b73cbc90caf5a53,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5840d01b30abb9e45ac364d09be0031a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 455bf5d8fa8999245b73cbc90caf5a53, type: 3}
 --- !u!1 &1673096065
