@@ -44,7 +44,8 @@ public class LaserManager : MonoBehaviour
             laser1.enabled = true;
         }
         else
-        {
+        {   
+            if (usingLaser)
             laser1.enabled = false;
         }   
     }
