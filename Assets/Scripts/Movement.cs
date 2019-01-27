@@ -9,6 +9,13 @@ public class Movement : MonoBehaviour
     NavMeshObstacle obstacle;
 
     public GameObject part;
+
+    private Renderer rend;
+
+    public Material inactiveColour;
+    public Material activeColour;
+    
+    
     
 
 
@@ -18,6 +25,8 @@ public class Movement : MonoBehaviour
 
     void Awake()
     {
+        rend = GetComponent<Renderer>();
+        
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
         cam = Camera.main;
@@ -48,7 +57,7 @@ public class Movement : MonoBehaviour
             obstacle.enabled = false;
             //ParticleMovement.startPos = agent.transform.position;
             //click to move
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -84,6 +93,9 @@ public class Movement : MonoBehaviour
                         if (potentialPlayer.GetComponent<Movement>().activePlayer == false)
                         {
                             
+                            rend.material.shader = Shader.Find("color");
+                            rend.material.SetColor("color", activeColour);
+                            
                             part.SetActive(false);
                             part.transform.position = transform.position;
                             
@@ -92,6 +104,7 @@ public class Movement : MonoBehaviour
                             
                             ParticleMovement.targetPos = potentialPlayer.transform.position;
                             potentialPlayer.GetComponent<Movement>().activePlayer = true;
+                            
                             agent.SetDestination(transform.position);
                             activePlayer = false;
                         }

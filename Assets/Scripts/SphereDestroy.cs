@@ -22,6 +22,11 @@ public class SphereDestroy : MonoBehaviour
     public void resetPosition ()
     {
         transform.position = originalPos;
-        GetComponent<NavMeshAgent>().SetDestination(originalPos);
+        if (GetComponent<Movement>().activePlayer)
+        {
+            GetComponent<NavMeshAgent>().SetDestination(originalPos);
+        }
+
+        
     }
 }

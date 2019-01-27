@@ -27,6 +27,7 @@
           </e>
         </e>
         <e p="ParticleMovement.cs" t="Include" />
+        <e p="Patrol.cs" t="Include" />
         <e p="ProCore" t="Include">
           <e p="ProBuilder" t="Include">
             <e p="About" t="Include">
@@ -158,6 +159,7 @@
           <e p="LaserManager.cs" t="Include" />
           <e p="Movement.cs" t="Include" />
           <e p="SphereDestroy.cs" t="Include" />
+          <e p="TargetBlock.cs" t="Include" />
         </e>
       </e>
       <e p="GlobalGameJam2019.sln" t="IncludeFlat" />
