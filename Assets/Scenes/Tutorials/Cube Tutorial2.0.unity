@@ -339,6 +339,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8375368999018190434, guid: 9d06413218ccced44bacdbc39560a072,
+        type: 3}
+      propertyPath: LM
+      value: 
+      objectReference: {fileID: 1743338798}
     - target: {fileID: 4519995839011268642, guid: 9d06413218ccced44bacdbc39560a072,
         type: 3}
       propertyPath: m_Mesh
@@ -647,8 +652,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621853996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9161012, y: -2.6481674, z: 9.388111}
-  m_LocalScale: {x: 2.096206, y: 2.096206, z: 2.096206}
+  m_LocalPosition: {x: -0.9161012, y: -2.6481674, z: 12.31}
+  m_LocalScale: {x: 2.096206, y: 2.096206, z: 2.8317647}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -1432,6 +1437,54 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1743338797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1743338799}
+  - component: {fileID: 1743338798}
+  m_Layer: 0
+  m_Name: LaserManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1743338798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743338797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26528d0694ec9c34a9326a25dc4cc121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 334199644}
+  TB: {fileID: 0}
+  TB2: {fileID: 0}
+  targetHits: 0
+  targetsNeeded: 1
+--- !u!4 &1743338799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743338797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.89, y: -2.23, z: 7.54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1873049472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1442,7 +1495,7 @@ PrefabInstance:
     - target: {fileID: 5217786055840782980, guid: 455bf5d8fa8999245b73cbc90caf5a53,
         type: 3}
       propertyPath: m_Name
-      value: Cube (2)
+      value: Cube
       objectReference: {fileID: 0}
     - target: {fileID: 221019743073488854, guid: 455bf5d8fa8999245b73cbc90caf5a53,
         type: 3}
@@ -1511,7 +1564,7 @@ PrefabInstance:
     - target: {fileID: 1832195758455169585, guid: 8093d6e93d3ed5e40aa8c024f9a8396a,
         type: 3}
       propertyPath: m_Name
-      value: DividerCube 1
+      value: TargetCube
       objectReference: {fileID: 0}
     - target: {fileID: 1832195758455169584, guid: 8093d6e93d3ed5e40aa8c024f9a8396a,
         type: 3}
