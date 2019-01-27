@@ -405,6 +405,9 @@ MonoBehaviour:
   part: {fileID: 0}
   inactiveColour: {fileID: 2100000, guid: 3815f3003b9f26a439a58e0f1955fb9a, type: 2}
   activeColour: {fileID: 2100000, guid: 9900a36a5a3f7af43b5105d14b0dca39, type: 2}
+  mask:
+    serializedVersion: 2
+    m_Bits: 1
   activePlayer: 1
 --- !u!208 &4457913717044605506
 NavMeshObstacle:
