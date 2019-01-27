@@ -66,9 +66,10 @@ public class Laser : MonoBehaviour
     IEnumerator stopSplitter()
     {
         currentObject.GetComponent<LaserHit>().stopLaser();
-        yield return new WaitForSeconds(Time.deltaTime);
+        //yield return new WaitForSeconds(Time.deltaTime);
         currentObject = null;
-        yield return new WaitForSeconds(Time.deltaTime);
+        //yield return new WaitForSeconds(Time.deltaTime);
         checkHit1 = false;
+        yield return null;
     }
 }
