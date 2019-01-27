@@ -6,14 +6,16 @@ public class LaserManager : MonoBehaviour
 {
 
     public Animator anim;
-    public TargetBlock TB, TB2;
+    TargetBlock TB, TB2;
     public int targetHits;
     public int targetsNeeded;
+    AudioSource aud;
+    bool doorOpened;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        aud = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,9 +24,17 @@ public class LaserManager : MonoBehaviour
         if (targetHits == targetsNeeded)
         {
             anim.SetBool("doorOpen", true);
+            if (!doorOpened)
+            {
+                aud.Play();
+                doorOpened = true;
+            }
+
         } else
         {
             anim.SetBool("doorOpen", false);
+            aud.Stop();
+            doorOpened = false;
         }
     }
 
