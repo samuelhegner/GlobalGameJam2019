@@ -41,13 +41,11 @@ public class LaserManager : MonoBehaviour
 
         if (targetHits == targetsNeeded && usingLaser)
         {
-            laser1.
+            laser1.enabled = true;
         }
         else
         {
-            anim.SetBool("doorOpen", false);
-            aud.Stop();
-            doorOpened = false;
+            laser1.enabled = false;
         }   
     }
 
