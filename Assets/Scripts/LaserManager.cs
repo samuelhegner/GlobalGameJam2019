@@ -58,6 +58,6 @@ public class LaserManager : MonoBehaviour
 
     public void targetsHit()
     {
-        anim.SetBool("doorOpen", true);
+        //anim.SetBool("doorOpen", false);
     }
 }
